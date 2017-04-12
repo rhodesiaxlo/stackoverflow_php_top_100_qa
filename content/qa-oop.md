@@ -5,5 +5,6 @@ $this 代表当前对象
 self  代表当前类
 
 $this self 的正确用法示例
+
     class foo{
     }
