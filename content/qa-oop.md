@@ -14,3 +14,42 @@ $this self 的正确用法示例
             echoh $this->non_static_mem.' '.self::$static_mem;
         }
     }
+
+$this 多态示例
+
+    class X {
+        function foo() {
+            echo "X::foo()";
+        }
+
+        function bar() {
+            $this->foo();
+        }
+    }
+    class Y extends X {
+        function foo() {
+            echo "Y::foo";
+        }
+    }
+    $x = new Y();
+    $x->bar();
+    //output Y::foo
+
+self 压制多态的例子
+    class X {
+        function foo() {
+            echo "X::foo()";
+        }
+        function bar() {
+            self::foo();
+        }
+    }
+    class Y extends X {
+        function foo() {
+            echo "Y::foo()";
+        }
+    }
+    $x = new Y();
+    $x->bar();
+    //output X:foo()
+
