@@ -55,3 +55,11 @@ this does not display parse errors,the only way to display parse error is modify
 
    display_erros = on
 
+## object　和 array 在取数据方式上的区别
+
+    $arr = array("name"=> "tom", "gender"=>"male");
+    echo $arr->name //output null
+    echo $arr['name'] //output tom
+    $obj = (Object)$arr;
+    echo $obj->name //output tom
+
